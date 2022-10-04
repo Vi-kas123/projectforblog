@@ -1,0 +1,53 @@
+.navbar{
+background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 100%);
+  }
+  .nav-link{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Lucida Console", Courier, monospace;
+    margin-top: 15px;
+  }
+  .profileimage:hover{
+       opacity: 0.7;
+  }
+
+  @media(max-width: 600px){
+        .navbar-brand img{
+                   width: 100px;
+               }
+  }
+  @media(max-width: 990px){
+        .nav-link{
+                   margin-top: 5px;
+               }
+  }
+  .nav-link:hover{
+      background-color: #E49B0F;
+      border-radius: 20px;
+      border: 1px solid black;
+      color: white;
+  }
+  .navbar-nav li{
+       padding: 0 10px;
+  }.navbar{
+    background-color: #1192d8;
+  }
+  .nav-link{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Lucida Console", Courier, monospace;
+    color: white;
+  }
+
+
+  .nav-link:hover{
+      background-color: #E49B0F;
+      border-radius: 20px;
+      border: 1px solid black;
+  }
+  .navbar-nav li{
+       padding: 0 10px;
+  }
+  .brandlog:hover{
+     color: black;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Interface</title>
+	<link href="/static/adminlogin.css" rel="stylesheet">
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+	<meta charset="UTF-8">
+	<title>Admin Interface</title>
+</head>
+	<body style="background-color: #0093E9;background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
+		<img class="wave backimg" src="https://techmeetups.com/wp-content/uploads/2019/06/blogging-SMB.png">
+		<div class="container">
+			<div class="img">
+
+			</div>
+			<div class="login-content">
+				<form action="/admincheck" method="post">{% csrf_token %}
+					<img src="https://www.pinclipart.com/picdir/middle/165-1659802_authorized-it-channel-partner-james-bond-profile-clipart.png" style="border-radius: 60px;" class="logo">
+					<h4><b><font color="#023020" class="headline">Admin Login</font></b></h4>
+					<div class="row">
+						<div class="input-field col s11">
+							<i class="material-icons prefix" style="color: #E49B0F;">people</i>
+							<input required id="emailid" name="emailid" type="text" class="validate">
+							<label for="emailid"
+								style="font-size: 20px;  font-family: Cambria;"><b>Email Id</b></label>
+						</div>
+						<div class="input-field col s11">
+							<i class="material-icons prefix" style="color: #E49B0F;">lock</i>
+							<input required id="password" name="password" type="password" class="validate">
+							<label for="password"
+								style="font-size: 20px; font-family: Cambria;"><b style="font-color: #023020;">Password</b></label>
+
+						</div>
+						<div class="col s12 btnrow">
+							<button type="submit"  class="loginbutton"><font class="logintext">Login</font></button>
+						</div>
+						<div class="row">
+                            <div class="col s12">
+                                <div class="messagestyle" id="message" name="message" style="color: #E49B0F;"> {{ message }} </div>
+                            </div>
+                        </div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</body>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#message').val(' ')
+    })
+</script>
+
+</html>

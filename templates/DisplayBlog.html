@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<link href="/static/displayblog.css" rel="stylesheet">
+<html lang="en">
+<head>
+         <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="maincontainer">
+    <div class="box" style="padding: 10px;">
+     <div class="boxheading" style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);;">
+       <span style="width: 40%; display: flex; justify-content: flex-start; padding: 5px;"><a href="http://localhost:8000/admincheck"><i class="material-icons" style="color: #FFFFFF; font-size: 24px;">add_box</i></a></span>
+      <span class="headingtext">Blog List</span>
+     </div>
+        <table class="stripped">
+        <thead>
+             <tr>
+                 <th>Id</th>
+                 <th>Blog Type</th>
+                 <th>Title</th>
+                 <th>Description</th>
+                 <th>Update</th>
+
+             </tr>
+        </thead>
+            <tbody>
+               {% for row in records %}
+               <tr>
+                   <td>{{ row.id }}</td>
+                <td>{{ row.blogtype }}</td>
+                <td>{{ row.title }}</td>
+                <td><textarea cols="15" rows="20">{{ row.description }}</textarea></td>
+<!--                <td>{{ row.productid }}</td>-->
+<!--                <td>{{ row.productname }}</td>-->
+<!--                <td>{{ row.price }}</td>-->
+<!--                <td>{{ row.offerprice }}</td>-->
+<!--                <td>{{ row.quantity }}</td>-->
+<!--                <td>{{ row.packing }}</td>-->
+<!--                <td><img src="/static/{{ row.producticon }}" width="40" class="imgbtn" categoryicon="{{ row.categoryicon }}" categoryid="{{ row.categoryid }}" producticon="{{ row.producticon }}" productid="{{ row.productid }}"/></td>-->
+                <td><a class="waves-effect waves-light btn modal-trigger btn editdeletebtn"  bid="{{ row.id }}" tname="{{ row.title }}"  href="#modal1" disc="{{ row.description }}" style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">Edit/Delete</a></td></tr>
+                      {% endfor %}
+               </tbody>
+    </table>
+    </div>
+</div>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+       <input type="hidden" id="id">
+          <div class="dialogbox">
+            <div class="boxheading" style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">
+                <span class="headingtext">Blog List</span>
+            </div>
+              <div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">add_shopping_cart</i>
+                       <select id="blogtype" name="blogtype" style="color: yellow;" >
+                           <option value="" disabled selected>Choose your option</option>
+                           <option value="Food blogs">Food blogs</option>
+                           <option value="Health and fitness blogs">Health and fitness blogs</option>
+                           <option value="Photography blogs">Photography blogs</option>
+                           <option value="Personal blogs">Personal blogs</option>
+                       </select>
+                       <label>Select Blog type</label>
+                    </div>
+
+                </div>
+            <div class="row" style="margin-top: -20px;">
+                <div class="input-field col s12">
+                     <i class="material-icons prefix">mode_edit</i>
+                     <input id="title" name="title" type="text" class="validate">
+                     <label for="title">Title</label>
+                </div>
+            </div>
+
+           <div class="row">
+               <div class="input-field col s12">
+                   <i class="material-icons prefix">question_answer</i>
+                   <textarea rows="20" cols="50" name="description" id="description"></textarea>
+               </div>
+           </div>
+
+              </div>
+
+
+
+
+
+
+
+
+           <div class="row">
+               <div class="col s6 btnrow">
+                   <button class="btn waves-effect waves-light btnstyle editsbtn" style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">Edit
+                   <i class="material-icons right" >edit</i>
+                   </button>
+               </div>
+
+               <div class="col s6 btnrow">
+                   <button class="btn waves-effect waves-light btnstyle delsbtn" style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);">Remove
+                   <i class="material-icons right">delete</i>
+                   </button>
+               </div>
+           </div>
+
+        <div class="row">
+            <div class="col s12 btnrow">
+                 <span class="messagestyle"></span>
+            </div>
+        </div>
+              <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect btn-flat closebtn">Agree</a>
+    </div>
+       </div>
+       </div>
+    </div>
+
+
+
+</body>
+<script>
+$(document).ready(function(){
+    $('#modal1').modal();
+    $('#modal2').modal();
+    $('#title').val(' ');
+    $('#description').val(' ');
+
+         $('.editdeletebtn').click(function(){
+<!--            alert($(this).attr('bid'))-->
+            $('#id').val($(this).attr('bid'))
+            $('#title').val($(this).attr('tname'))
+            $('#blogtype').val($(this).attr('tname'));
+             $('#description').val($(this).attr('disc'));
+
+
+            $('select').formSelect();
+         })
+
+         $('.editsbtn').click(function(){
+<!--                     alert($('#id').val())-->
+
+       $.getJSON('http://localhost:8000/editblog',{id:$('#id').val(),blogtype:$('#blogtype').val(),description:$('#description').val(),title:$('#title').val()},function(data){
+          if(data.result)
+          {
+               $('.messagestyle').html("Blog updated Successfully...");
+           }
+          else
+          {
+               $('.messagestyle').html("Fail to update Blog...");
+           }
+       })
+
+    })
+
+
+
+         $('.delsbtn').click(function(){
+        $.getJSON('http://localhost:8000/deleteblog',{id:$('#id').val()},function(data){
+      if(data.result)
+     {
+        $('.messagestyle').html("Blog deleted Successfully..")
+      }
+      else
+     {
+        $('.messagestyle').html("Fail to delete Blog")
+     }
+
+         })
+    })
+
+    $('.closebtn').click(function(){
+<!--     alert('zzz');-->
+         $('#modal2').modal('close');
+         window.location.reload('http://localhost:8000/displayblog');
+    })
+
+
+     $('.closebtnicon').click(function(){
+<!--         alert('zzz');-->
+         $('#modal2').modal('close');
+         window.location.reload('http://localhost:8000/displayblog');
+    })
+
+
+
+
+})
+</script>
+<script>
+         $(document).ready(function(){
+          $('select').formSelect();
+        });
+    </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</html>

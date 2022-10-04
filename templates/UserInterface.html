@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+.heart {
+	font-size: 150px;
+	color: #e00;
+	animation: beat .25s infinite alternate;
+	transform-origin: center;
+}
+@keyframes beat{
+	to { transform: scale(1.2); }
+}
+ul li{
+		color: black;
+		padding-top: 5px;
+	}
+	@media(max-width: 1110px)
+      {
+          .fimg{
+               display: none;
+            }
+      }
+  .navbar{
+    background-color: #1192d8;
+    height: 80px;
+  }
+  .nav-link{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Lucida Console", Courier, monospace;
+    font-color: #fedcba;
+    color: white;
+  }
+
+  @media(max-width: 600px){
+        .navbar-brand img{
+                   width: 100px;
+               }
+  }
+  .nav-link:hover{
+      background-color: white;
+      border-radius: 20px;
+      border: 1px solid black;
+  }
+  .navbar-nav li{
+       padding: 0 10px;
+  }
+</style>
+<head>
+      	<script src="/static/userinterface.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+<!--	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+
+	<!-- Compiled and minified JavaScript -->
+<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<!-- JavaScript Bundle with Popper -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/static/userinterface.js"></script>
+   <script>
+
+  $(document).ready(function(){
+<!--    $('.sidenav').sidenav();-->
+  });
+    </script>
+
+
+    <title>Blog Hub</title>
+</head>
+<body style="   background: rgb(63,94,251);background: radial-gradient(circle, rgba(63,94,251,0.6115488431700805) 0%, rgba(252,70,107,0.3958625686602766) 100%);">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: rgba(0,0,0,0.3);">
+  <div class="container-fluid">
+    <a href="" class="navbar-brand heart"><h2 style="color: white;">Blog HUB</h2></a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#pn">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id=pn>
+    <ul class="navbar-nav ms-auto mainmenu">
+      <button type="button" class="btn btn-outline-dark btn-lg" data-bs-toggle="modal" data-bs-target="#login" style="font-weight: bold;font-family: Lucida Console, Courier, monospace;"><a href="http://localhost:8000/adminregistration" style="text-decoration: none;font-color: white;">Register Now</a></button>
+      <!--model button end--->
+    </ul>
+  </div><!--collapse end-->
+  </div><!--container-fluid-->
+</nav><!--nav end-->
+
+
+<br><br><br>
+<div class="carousel slide" data-bs-ride="carousel" id="a" style="margin-top: 8px;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#a" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#a" data-bs-slide-to="1" ></button>
+    <button type="button" data-bs-target="#a" data-bs-slide-to="2" ></button>
+
+  </div>
+  <div class="carousel-inner" >
+    <div class="carousel-item active" data-bs-interval="2500">
+      <div style="width:100%;">
+      <img src="/static/11.png" class="d-block w-100" alt="..." style="height: 400px;">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2500">
+      <div style="width:100%;">
+      <img src="/static/33.png" class="d-block w-100" alt="..." style="height: 400px;">
+      </div>
+    </div>
+   <div class="carousel-item" data-bs-interval="2500">
+      <div style="width:100%;">
+      <img src="/static/22.png" class="d-block w-100" alt="..." style="height: 400px;">
+      </div>
+    </div>
+      <div class="carousel-caption d-none d-md-block">
+
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+<br>
+<div style="padding: 5px; display: flex; flex-direction: row; flex-wrap: wrap;" id="bloglist">
+
+</div>
+<br>
+{% include 'slider.html' %}
+<br>
+<br><br>
+<!--footer start-->
+<div class="container-fluid" style="background: rgba(0,0,0,0.3);">
+    <div class="row" style="padding-top: 30px;">
+    	<div class="col-md-2">
+    		<h5 style="color: #fedcba;">Company</h5>
+    		<ul style="list-style-type: none;">
+    			<li>About BlogHUB</li>
+    			<li>Customer Speak</li>
+    			<li>Terms and Conditions</li>
+    			<li>Privacy Policy</li>
+    			<li>Contact</li>
+
+    		</ul>
+    	</div>
+    	<div class="col-md-2">
+    		<h5 style="color: #fedcba;">Platform</h5>
+    		<ul style="list-style-type: none;">
+    			<li>Browse by manufacture</li>
+    			<li>Articles</li>
+    			<li>Offer / Coupens</li>
+    			<li>FAQs</li>
+    		</ul>
+    	</div>
+    	<div class="col-md-2">
+    		<h5 style="color: #fedcba;">Type</h5>
+    		<ul style="list-style-type: none;">
+    			<li>Personal</li>
+    			<li>Sport</li>
+    			<li>Health</li>
+    			<li>Fitness</li>
+    			<li>Travel</li>
+
+    		</ul>
+    	</div>
+    	<div class="col-md-2">
+    		<h5 style="color: #fedcba;">Social</h5>
+    		<ul style="list-style-type: none;">
+    			<li>Facebook</li>
+    			<li>Twitter</li>
+    			<li>Instagram</li>
+    			<li>Youtube</li>
+    		</ul>
+    	</div>
+    	<div class="col-md-1"></div>
+    	<div class="col-md-3">
+    		<h6 style="color: #fedcba;">SUBSCRIBE TO OUR NEWSLETTER</h6>
+    		<p style="color: white;">Get a free subscription to our webiste and stay tuned to our latest offers</p>
+    		<div class="row">
+    			<div class="col-md-12">
+    				<form>
+    					<input type="text" name="" placeholder="Enter your Email">
+    				</form>
+    			</div>
+    		</div><br>
+    		<div class="row fimg">
+    			<div class="col-md-12"><img src="/static/play.png" width="90" height="50"><span style="padding-left: 30px;"><img src="/static/app_store.png" width="90" height="50"></span></div></div>
+    		</div>
+    	</div>
+	<br>
+    </div>
+
+<!--footer end --->
+</body>
+<script>
+
+  $(document).ready(function(){
+<!--    $('.sidenav').sidenav();-->
+  });
+</script>
+
+</html>
